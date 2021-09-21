@@ -1,10 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
-
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-
 class NavBar extends React.Component {
   render() {
     return (
@@ -68,35 +63,35 @@ const MainContainer = styled.div`
   padding: 10px;
 `;
 
-const Container = styled.div`
-  width: 25vw;
-  height: 50px;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-`;
+// const Container = styled.div`
+//   width: 25vw;
+//   height: 50px;
+//   background-color: red;
+//   display: flex;
+//   justify-content: center;
+//   border-radius: 5px;
+// `;
 
-const LinkContainer = styled.div`
-  width: 100%;
-  height: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-`;
+// const LinkContainer = styled.div`
+//   width: 100%;
+//   height: 25px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   display: flex;
+//   justify-content: center;
+//   border-radius: 5px;
+// `;
 
-const NavContainer = styled.div`
-  width: 100%;
-  height: 40px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-`;
+// const NavContainer = styled.div`
+//   width: 100%;
+//   height: 40px;
+//   padding: 5px;
+//   display: flex;
+//   justify-content: center;
+//   border-radius: 5px;
+// `;
 
 const LogoContainer = styled.div`
   background-color: white;

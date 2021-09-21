@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
-import SocialMediaLinks from "../components/SocialMediaLinks";
 import RainbowText from "react-rainbow-text";
 
 class Home extends Component {
@@ -53,14 +52,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-const Text = styled.div`
-  width: 50%;
-  height: 50px;
-  font-size: 20px;
-  color: white;
-  font-family: Geneva;
 `;
 
 const Body = styled.div`
