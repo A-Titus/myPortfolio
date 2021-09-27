@@ -10,7 +10,6 @@ import styled from "styled-components";
 import vodacom from '../pages/images/vodacom.png';
 import wtc from '../pages/images/wtc.png';
 import tarsus from '../pages/images/tarsus.jpeg';
-import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 function createData(title, institution, period, image) {
   return { title, institution ,period, image};
