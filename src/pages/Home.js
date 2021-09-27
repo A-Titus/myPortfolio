@@ -6,11 +6,12 @@ import { useSpring, animated } from "react-spring";
 
 import Footer from "../components/Footer";
 import RainbowText from "react-rainbow-text";
+import { useHistory } from "react-router-dom";
 
 function Home() {
   const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 }, delay: 300 });
   const learnMoreBtn = useSpring({ to: { x: 0 }, from: { x: 10 }, delay: 50 ,  loop: { reverse: true }});
-  
+  let history = useHistory();
   return (
     <MainContainer>
       <Container>
@@ -25,7 +26,7 @@ function Home() {
                   <RainbowText lightness={0.5} saturation={1}>
                     Beautiful
                   </RainbowText>{" "}
-                  and Functional websites as well as mobile applications.
+                  and <span style={{color: "red"}}>Functional</span> websites as well as mobile applications.
                 </p>
               </div>
             </animated.div>
@@ -41,6 +42,7 @@ function Home() {
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 1.5 } }}
+              onClick={()=> {history.push("/about")}}
             >
               Learn more?
             </Button>

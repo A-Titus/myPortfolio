@@ -43,7 +43,7 @@ const Navbar = () => {
         <NavMenu>
           <animated.div style={about}>
             <NavBtn>
-              <NavBtnLink to="/about" activeStyle>
+              <NavBtnLink to="/about" >
                 About
               </NavBtnLink>
             </NavBtn>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
           <animated.div style={work}>
           <NavBtn>
-            <NavBtnLink to="/work" activeStyle>
+            <NavBtnLink to="/work" >
               Work
             </NavBtnLink>
           </NavBtn>
@@ -59,7 +59,7 @@ const Navbar = () => {
 
           <animated.div style={about}>
           <NavBtn>
-            <NavBtnLink to="/contact" activeStyle>
+            <NavBtnLink to="/contact" >
               Contact
             </NavBtnLink>
           </NavBtn>
