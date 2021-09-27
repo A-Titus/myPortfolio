@@ -11,32 +11,38 @@ class SocialMediaLinks extends React.Component {
       <Container>
         <Link1Container></Link1Container>
         <Link2Container>
+        <a href="https://www.linkedin.com/in/abdus-samad-titus-b7106a174/">
           <img
             src={Linkedin}
             alt="Linkedin"
-            width="40%"
+            width="50%"
             max-height="40%"
             object-fit="contain"
           />
+          </a>
         </Link2Container>
 
         <Link3Container>
+        <a href="https://github.com/A-Titus">
           <img
             src={Github}
             alt="Github"
-            width="40%"
+            width="50%"
             max-height="40%"
             object-fit="contain"
           />
+          </a>
         </Link3Container>
         <Link4Container>
+        <a href="https://wa.me/qr/LNHC43POWW2WF1">
           <img
             src={Whatsapp}
             alt="Whatsapp"
-            width="40%"
+            width="50%"
             max-height="40%"
             object-fit="contain"
           />
+          </a>
         </Link4Container>
       </Container>
     );
@@ -75,28 +81,31 @@ const Link1Container = styled.div`
 `;
 const Link2Container = styled.div`
   width: 90%;
-  height: 30px;
+  height: 40px;
   background-color: #ff007f;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  padding-left: 15px;
 `;
 const Link3Container = styled.div`
   width: 90%;
-  height: 30px;
+  height: 40px;
   background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  padding-left: 15px;
 `;
 const Link4Container = styled.div`
   width: 90%;
-  height: 30px;
+  height: 40px;
   background-color: green;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  padding-left: 15px;
 `;

@@ -140,7 +140,7 @@ const TextContainer = styled.div`
 
   @media (max-width: 500px) {
     p {
-      font-size: 0.9em;
+      font-size: 1.2em;
     }
   }
 

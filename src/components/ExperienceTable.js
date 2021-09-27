@@ -10,6 +10,7 @@ import styled from "styled-components";
 import vodacom from '../pages/images/vodacom.png';
 import wtc from '../pages/images/wtc.png';
 import tarsus from '../pages/images/tarsus.jpeg';
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 function createData(title, institution, period, image) {
   return { title, institution ,period, image};
@@ -17,7 +18,7 @@ function createData(title, institution, period, image) {
 
 const rows = [
   createData('Technical support Intern','Tarsus Technologies', 'Jan 2018 - Feb 2019', tarsus),
-  createData('Software Engineer Student', 'WeThinkCode', 'May 2019 - May 2021', wtc),
+  createData('Software Engineer Student', 'WeThinkCode', 'May 2019  -  May 2021', wtc),
   createData('Software Engineer Intern', 'Vodacom', 'Feb 2020 - Jul 2020', vodacom),
   createData('Software Engineer Intern', 'Vodacom', 'Mar 2021 - Present', vodacom),
 ];

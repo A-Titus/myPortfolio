@@ -63,7 +63,7 @@ export default Home;
 const MainContainer = styled.div`
   background-color: black;
   width: 100%;
-  height: auto%;
+  height: 100vh;
   padding-bottom: 40px;
 `;
 
@@ -116,14 +116,13 @@ const HeaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 10px;
-
   color: white;
 `;
 
 const BodyContainer = styled.div`
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -131,9 +130,9 @@ const BodyContainer = styled.div`
 `;
 
 const FooterContainer = styled.div`
-  background-color: yellow;
+  background-color: black;
   width: 98%;
-  height: auto;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;

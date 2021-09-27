@@ -23,13 +23,6 @@ const Navbar = () => {
     },
   });
 
-  // const contact = useSpring({
-  //   from: { x: -100 },
-  //   config: { duration: 300 },
-  //   loop: {
-  //     x: 0,
-  //   },
-  // });
   return (
     <>
       <Nav>
@@ -88,6 +81,7 @@ const NavLogoContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 10px;
 `;
 
 const NavLogo = styled.div`
