@@ -1,11 +1,59 @@
-import React from "react";
+import React, { useState } from 'react'
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import { TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
+import emailjs from 'emailjs-com'
 
-function Contact() {
+import USER_ID from '../components/email';
+import TEMPLATE_ID from '../components/email';
+import SERVICE_ID from '../components/email';
+
+
+const Contact = () => {
+
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const isValidEmail = email => {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(email).toLowerCase());
+};
+
+  const SendEmail = () => {
+    console.log("sending email");
+    if (name && email && message) {
+      if(!isValidEmail(email)){
+        alert('Please enter a valid email.');
+      }
+      const serviceId = SERVICE_ID.SERVICE_ID;
+      const templateId = TEMPLATE_ID.TEMPLATE_ID;
+      const userId = USER_ID.USER_ID;
+      const templateParams = {
+          name,
+          surname,
+          email,
+          message
+      };
+
+
+
+      emailjs.send(serviceId, templateId, templateParams, userId)
+          .then(response => console.log(response))
+          .then(error => console.log(error));
+
+      setName('');
+      setSurname('');
+      setEmail('');
+      setMessage('');
+  } else {
+      alert('Please fill in all fields.');
+  }
+}
+
   const SendBtn = useSpring({
     to: { x: 0 },
     from: { x: 10 },
@@ -29,12 +77,13 @@ function Contact() {
             color="error"
             id="outlined"
             variant="outlined"
+            value={name} onChange={e => setName(e.target.value)}
             label="Name"
             fullWidth
             style={{
               backgroundColor: "#121212",
               borderColor: "white",
-              marginRight: "10px"
+              marginRight: "5px"
             }}
             InputProps={{
               style: {
@@ -49,12 +98,13 @@ function Contact() {
             color="error"
             id="outlined"
             variant="outlined"
+            value={surname} onChange={e => setSurname(e.target.value)}
             label="Surname"
             fullWidth
             style={{
               backgroundColor: "#121212",
               borderColor: "white",
-              marginLeft: "10px"
+              marginLeft: "5px"
             }}
             InputProps={{
               style: {
@@ -71,6 +121,7 @@ function Contact() {
             color="error"
             id="outlined"
             variant="outlined"
+            value={email} onChange={e => setEmail(e.target.value)}
             label="Email"
             fullWidth
             style={{
@@ -93,6 +144,7 @@ function Contact() {
             id="outlined"
             label="Message"
             variant="outlined"
+            value={message} onChange={e => setMessage(e.target.value)}
             fullWidth
             multiline
             rows={12}
@@ -122,7 +174,7 @@ function Contact() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 1.5 } }}
               onClick={() => {
-                console.log("send");
+                SendEmail();
               }}
             >
               Send
