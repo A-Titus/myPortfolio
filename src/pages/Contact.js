@@ -24,17 +24,71 @@ function Contact() {
         </FooterContainer>
       </ContactContainer>
       <FormContainer>
-        <EmailContainer>
-          <TextField
+        <NameContainer>
+          <WhiteBorderTextField
             color="error"
             id="outlined"
-            label="Email"
             variant="outlined"
+            label="Name"
             fullWidth
+            style={{
+              backgroundColor: "#121212",
+              borderColor: "white",
+              marginRight: "10px"
+            }}
+            InputProps={{
+              style: {
+                color: "white",
+              },
+            }}
+            InputLabelProps={{
+              style: { color: "#fff" },
+            }}
+          />
+          <WhiteBorderTextField
+            color="error"
+            id="outlined"
+            variant="outlined"
+            label="Surname"
+            fullWidth
+            style={{
+              backgroundColor: "#121212",
+              borderColor: "white",
+              marginLeft: "10px"
+            }}
+            InputProps={{
+              style: {
+                color: "white",
+              },
+            }}
+            InputLabelProps={{
+              style: { color: "#fff" },
+            }}
+          />
+        </NameContainer>
+        <EmailContainer>
+          <WhiteBorderTextField
+            color="error"
+            id="outlined"
+            variant="outlined"
+            label="Email"
+            fullWidth
+            style={{
+              backgroundColor: "#121212",
+              borderColor: "white",
+            }}
+            InputProps={{
+              style: {
+                color: "white",
+              },
+            }}
+            InputLabelProps={{
+              style: { color: "#fff" },
+            }}
           />
         </EmailContainer>
         <MessageContainer>
-          <TextField
+          <WhiteBorderTextField
             color="error"
             id="outlined"
             label="Message"
@@ -42,6 +96,17 @@ function Contact() {
             fullWidth
             multiline
             rows={12}
+            style={{
+              backgroundColor: "#121212",
+            }}
+            InputProps={{
+              style: {
+                color: "white",
+              },
+            }}
+            InputLabelProps={{
+              style: { color: "#fff" },
+            }}
           />
         </MessageContainer>
         <ButtonContainer>
@@ -56,7 +121,9 @@ function Contact() {
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 1.5 } }}
-              onClick={() => {console.log("send")}}
+              onClick={() => {
+                console.log("send");
+              }}
             >
               Send
             </Button>
@@ -98,30 +165,29 @@ const Container = styled.div`
 const FormContainer = styled.div`
   width: 40%;
   height: 70vh;
-  background-color: white;
+  background-color: black;
   border-radius: 5px;
   margin-right: 70px;
   display: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
+  padding: 25px;
 
   @media (max-width: 500px) {
-    {
-     max-height: 70vh;
-     width: 80%;
-     margin-right: 0px;
-     margin-bottom: 30px;
-     
-   }
- }
+     {
+      max-height: 70vh;
+      width: 80%;
+      margin-right: 0px;
+      margin-bottom: 30px;
+    }
+  }
 
- @media (min-width: 501px) {
-    {
-     max-height: 70vh;
-     max-width: 40%;
-   }
- }
+  @media (min-width: 501px) {
+     {
+      max-height: 70vh;
+      max-width: 40%;
+    }
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -137,28 +203,26 @@ const ContactContainer = styled.div`
   color: white;
 
   @media (max-width: 500px) {
-    {
-     max-height: 80vh;
-     width: 80%;
-     margin-left: 0px;
-     margin-top: 100px;
+     {
+      max-height: 80vh;
+      width: 80%;
+      margin-left: 0px;
+      margin-top: 100px;
+    }
+  }
 
-     
-   }
- }
-
- @media (min-width: 501px) {
-    {
-     max-height: 80vh;
-     max-width: 40%;
-   }
- }
+  @media (min-width: 501px) {
+     {
+      max-height: 80vh;
+      max-width: 40%;
+    }
+  }
 `;
 
 const MessageContainer = styled.div`
   width: 100%;
   height: 30vh;
-  background-color: white;
+  background-color: black;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -169,10 +233,20 @@ const MessageContainer = styled.div`
 const EmailContainer = styled.div`
   width: 100%;
   height: 10vh;
-  background-color: white;
+  background-color: black;
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+`;
+
+const NameContainer = styled.div`
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
   align-items: flex-start;
 `;
 
@@ -184,13 +258,12 @@ const FooterContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
 `;
 
 const ButtonContainer = styled.div`
   width: 100%;
   height: 10vh;
-  background-color: white;
+  background-color: black;
   border-radius: 5px;
   display: flex;
   justify-content: flex-start;
@@ -199,11 +272,22 @@ const ButtonContainer = styled.div`
 const Button = styled(motion.button)`
   padding: 1rem 3rem;
   font-size: 1rem;
-  border: 2px solid #fff;
+  border: 2px solid red;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
   background: red;
   color: #fff;
   margin-left: -12;
+`;
+
+const WhiteBorderTextField = styled(TextField)`
+  & label.Mui-focused {
+    color: white;
+  }
+  & .MuiOutlinedInput-root {
+    &.Mui-focused fieldset {
+      border-color: white;
+    }
+  }
 `;
