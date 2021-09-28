@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import emailjs from 'emailjs-com'
 
-import USER_ID from '../components/email';
-import TEMPLATE_ID from '../components/email';
-import SERVICE_ID from '../components/email';
+import Data from '../components/email';
+
+
 
 
 const Contact = () => {
@@ -18,20 +18,14 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const isValidEmail = email => {
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(String(email).toLowerCase());
-};
-
+  
   const SendEmail = () => {
     console.log("sending email");
     if (name && email && message) {
-      if(!isValidEmail(email)){
-        alert('Please enter a valid email.');
-      }
-      const serviceId = SERVICE_ID.SERVICE_ID;
-      const templateId = TEMPLATE_ID.TEMPLATE_ID;
-      const userId = USER_ID.USER_ID;
+
+      const serviceId = Data.SERVICE_ID;
+      const templateId = Data.TEMPLATE_ID;
+      const userId = Data.USER_ID;
       const templateParams = {
           name,
           surname,
@@ -39,6 +33,7 @@ const Contact = () => {
           message
       };
 
+      console.log()
 
 
       emailjs.send(serviceId, templateId, templateParams, userId)
